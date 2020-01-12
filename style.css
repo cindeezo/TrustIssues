@@ -1,0 +1,212 @@
+html {
+    font-family: Avenir;
+}
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: white;
+    color: black;
+    color: white;
+  }
+
+header {
+    background-color: transparent;
+    padding: 30px;
+    text-align: center;
+    color: white;
+    animation: text-shadow 2.0s ease-in-out infinite;
+    font-size: 5em;
+    font-weight: 900;
+    line-height: 1;
+}
+
+@keyframes text-shadow {
+    0% {  
+        transform: translateY(0);
+        text-shadow: 
+            0 0 0 #0c2ffb, 
+            0 0 0 #2cfcfd, 
+            0 0 0 #fb203b, 
+            0 0 0 #fefc4b;
+    }
+
+    20% {  
+        transform: translateY(-1em);
+        text-shadow: 
+            0 0.125em 0 #0c2ffb, 
+            0 0.25em 0 #2cfcfd, 
+            0 -0.125em 0 #fb203b, 
+            0 -0.25em 0 #fefc4b;
+    }
+
+    40% {  
+        transform: translateY(0.5em);
+        text-shadow: 
+            0 -0.0625em 0 #0c2ffb, 
+            0 -0.125em 0 #2cfcfd, 
+            0 0.0625em 0 #fb203b, 
+            0 0.125em 0 #fefc4b;
+    }
+    
+   60% {
+        transform: translateY(-0.25em);
+        text-shadow: 
+            0 0.03125em 0 #0c2ffb, 
+            0 0.0625em 0 #2cfcfd, 
+            0 -0.03125em 0 #fb203b, 
+            0 -0.0625em 0 #fefc4b;
+    }
+
+    80% {  
+        transform: translateY(0);
+        text-shadow: 
+            0 0 0 #0c2ffb, 
+            0 0 0 #2cfcfd, 
+            0 0 0 #fb203b, 
+            0 0 0 #fefc4b;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+      animation: none !important;
+      transition: none !important;
+    }
+}
+.background-img { 
+    background-image: url('https://i.gifer.com/4tY7.gif');
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    z-index: -1;
+}
+
+.background-img::after {
+    position: fixed;
+    left:0;
+    right:0;
+    top:0;
+    bottom: 0;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(0,0,0, .5);
+    content: '';
+    z-index: 1;
+    transition: 200ms;
+}
+
+.blog-container {
+    box-sizing: border-box;
+    width: 100vw;
+    display: flex;
+    align-items: center;  /*vertical placement (inside flex only)*/
+    justify-content: center; /*horizontal placement (inside flex only)*/
+    
+}
+
+.blog-card {
+    position: relative;
+    overflow: hidden;
+    height: 340px;
+    width: 200px;
+    background-color: black;
+    border-radius: 8px;
+    margin: 8px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    cursor: pointer;
+    transition: 200ms;
+    text-decoration: none;
+}
+.blog-card:hover {
+    box-shadow: 0 0 10px rgba(0,0,0, .7);
+    transform: scale(1.05);
+}
+
+.blog-card:active {
+    transform: scale(1.07);
+}
+
+.blog-card::after {
+    position: absolute;
+    left:0;
+    right:0;
+    top:0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(transparent, black);
+    content: '';
+    z-index: 1;
+    transition: 200ms;
+}
+
+.blog-card:hover::after {
+    background: linear-gradient(transparent, rgba(44, 252, 253, .3));
+}
+
+
+.blog-card:first-of-type {
+background-image: url("https://pbs.twimg.com/media/Chpy8RQWkAAPvZ8.jpg:large");
+background-position: -80px;
+}
+
+.blog-card:nth-of-type(2) {
+    background-image: url("https://image.redbull.com/rbcom/010/2013-09-24/1331612880773_3/0010/1/1500/1000/1/drake-hold-on-we-re-going-home.jpg");
+}
+
+.blog-card:nth-of-type(3) {
+    background-image: url("https://i.ytimg.com/vi/3eLmBEtHw8g/maxresdefault.jpg");
+}
+
+.blog-card:last-of-type {
+    background-image: url("https://images.rapgenius.com/95adb55ffeaeb85982cfb7082d4e4d16.500x750x1.jpg");
+}
+
+
+
+.blog-text {
+    color: white;
+    z-index: 2;
+    text-align: left;
+    padding: 18px 12px;
+}
+
+.blog-text h3 {
+    font-weight: 500;
+    margin: 0;
+    margin-bottom: 4px;
+}
+
+.blog-text p {
+    font-weight: 300;
+    margin: 0;
+    margin-bottom: 4px;
+    font-size: 12px;
+}
+
+.fadeIn {
+    animation: fadeIn;
+    animation-duration: .4s;
+    animation-delay: .4s;
+    animation-fill-mode: both;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
